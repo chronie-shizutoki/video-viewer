@@ -2,9 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 
+// 获取应用运行的实际目录（兼容pkg打包）
+const appDir = process.pkg ? path.dirname(process.execPath) : __dirname;
+
 const app = express();
 const PORT = 4000;
-const VIDEO_FOLDER = path.join(__dirname, 'video');
+const VIDEO_FOLDER = path.join(appDir, 'video');
 
 // Ensure the video folder exists
 if (!fs.existsSync(VIDEO_FOLDER)) {
@@ -17,7 +20,7 @@ if (!fs.existsSync(VIDEO_FOLDER)) {
 }
 
 // Static file service
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(appDir, 'public')));
 
 // Recursively get all video files
 function getAllVideoFiles(directory) {
