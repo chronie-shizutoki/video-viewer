@@ -5,11 +5,6 @@
     box-sizing: border-box;
 }
 
-@font-face {
-    font-family: 'Noto Serif SC';
-    src: url('fonts/NotoSerifSC-1.ttf') format('truetype');
-}
-
 /* Liquid glass effect - Basic styles */
 :root {
     /* Light mode variables */
@@ -162,7 +157,7 @@
 
 /* Body background - Add gradient background to highlight the liquid glass effect */
 body {
-    font-family: 'Noto Serif SC', sans-serif;
+    font-family: system-ui, sans-serif;
     background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
     color: var(--liquid-text);
     line-height: 1.6;
@@ -273,7 +268,7 @@ main::after {
     width: 100%;
     height: auto;
     --plyr-color-main: var(--liquid-primary);
-    --plyr-font-family: 'Noto Serif SC', sans-serif;
+    --plyr-font-family: system-ui, sans-serif;
 }
 
 /* Mobile video container adjustment - Solve the top and bottom black borders issue */
